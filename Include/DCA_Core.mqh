@@ -79,11 +79,7 @@ public:
     void CheckForNewMasterOrders()
     {
         for(int i = 0; i < PositionsTotal(); i++)
-        {
-            string symbol = PositionGetString(POSITION_SYMBOL);
-            if(symbol == "")
-                continue;
-                
+        {    
             ulong ticket = PositionGetInteger(POSITION_TICKET);
             long magic = PositionGetInteger(POSITION_MAGIC);
             string comment = PositionGetString(POSITION_COMMENT);
@@ -261,9 +257,6 @@ public:
     {
         for(int i = PositionsTotal() - 1; i >= 0; i--)
         {
-            string symbol = PositionGetString(POSITION_SYMBOL);
-            if(symbol == "") continue;
-
             ulong magic = PositionGetInteger(POSITION_MAGIC);
             ulong ticket = PositionGetInteger(POSITION_TICKET);
 
